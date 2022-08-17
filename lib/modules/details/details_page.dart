@@ -56,7 +56,6 @@ class DetailsPage extends StatelessWidget {
                     }
                   ),
                 ),
-
                 ///Page Content
                 SizedBox(
                   width: Get.width,
@@ -79,10 +78,8 @@ class DetailsPage extends StatelessWidget {
                                           controller.onAyaSelected(index);
                                         },
                                         child: CustomText(
-                                          text: controller.ayahs[index].text!.contains('بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ') &&
-                                          controller.ayahs[index].text!.length > 39?
-                                          '${controller.ayahs[index].text!.substring(39)} ﴿${controller.ayahs[index].numberInSurah}﴾ '
-                                              : '${controller.ayahs[index].text} ﴿${controller.ayahs[index].numberInSurah}﴾ ' ,
+                                          text:
+                                          '${controller.ayahs[index].text!} ﴿${controller.ayahs[index].numberInSurah}﴾ ',
                                           fontSize: controller.fontSize,
                                           textColor: controller.ayahs[index].selected? Colors.red : Colors.black,
                                         ),

@@ -33,8 +33,6 @@ class HomeController extends GetxController{
   }
 
   void deleteSavedAya(int index){
-    print(ayahs[index]);
-    print(setOfKeys?.toList()[index]??'');
     _sharedPreferencesService.removeValueWithKey(setOfKeys?.toList()[index]??'');
     getSavedAyahs();
   }

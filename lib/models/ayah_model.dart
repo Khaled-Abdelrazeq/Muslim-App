@@ -7,8 +7,6 @@ class AyahModel{
   AyahModel({this.number, this.text, this.numberInSurah, this.selected = false});
 
   static AyahModel fromJson (Map<String, dynamic> json){
-    if(json == null) return AyahModel();
-
     return AyahModel(
       number: json['number'],
       text: json['text'],
@@ -17,14 +15,14 @@ class AyahModel{
   }
 
   static List<AyahModel> listFromJson(Map<String, dynamic> json){
-    List<dynamic> ayasJson = json['data']['ayahs'];
-    List<AyahModel> ayas = [];
+    List<dynamic> ayahJson = json['data']['ayahs'];
+    List<AyahModel> ayah = [];
 
-    ayasJson.forEach((element) {
-      ayas.add(fromJson(element));
-    });
+    for (var element in ayahJson) {
+      ayah.add(fromJson(element));
+    }
 
-    return ayas;
+    return ayah;
   }
 
 

@@ -32,7 +32,6 @@ class DetailsController extends GetxController{
     setOfKeys?.forEach((e) {
       if(e.substring(0, e.indexOf('/')) == pageIndex.toString()){
         int index = int.parse(e.substring(e.indexOf('/')).replaceAll('/', ''));
-        print(index);
         ayahs[index].selected = true;
       }
     });
@@ -52,7 +51,6 @@ class DetailsController extends GetxController{
 
   void fetchPage()async{
     try{
-      print(pageIndex);
       ayahs = await _quranSurahsService.fetchQuranPage(pageIndex);
       getKeys();
     }catch(error){
@@ -71,9 +69,8 @@ class DetailsController extends GetxController{
   }
 
   void onAyaSelected(int index){
-    print(ayahs[index].text);
     ayahs[index].selected = true;
-    _sharedPreferencesService.saveValueWithKey('$pageIndex/$index', '${ayahs[index].text} ﴿${index+1}﴾     $surahTitle');
+    _sharedPreferencesService.saveValueWithKey('$pageIndex/$index', '${ayahs[index].text} ﴿${ayahs[index].numberInSurah}﴾     $surahTitle');
     update();
   }
 

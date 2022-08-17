@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.khaledabdelrazeq.muslim_task">
    <application
-        android:label="muslim_task"
+        android:label="Muslim"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

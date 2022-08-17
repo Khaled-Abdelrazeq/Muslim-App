@@ -63,7 +63,7 @@ class SharedPreferencesService extends GetxService {
   Future<void> removeMultipleValuesWithKeys(List<String> keys) async {
     await _getInstance();
     _preferencesAssertion();
-    var value;
+    Object? value;
     for (String key in keys) {
       value = _preferences?.get(key);
       if (value == null) {

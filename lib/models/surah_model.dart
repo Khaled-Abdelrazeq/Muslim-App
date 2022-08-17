@@ -8,8 +8,6 @@ class SurahModel{
   SurahModel({this.number, this.name, this.revelationType, this.numberOfAyahs, this.pages});
 
   static SurahModel fromJson (Map<String, dynamic> json){
-    if(json == null) return SurahModel();
-
     List<int> pages = [];
     json['pages'].forEach((element){
       pages.add(element);
@@ -27,9 +25,9 @@ class SurahModel{
     List<dynamic> surahsJson = json['chapters'];
     List<SurahModel> surahs = [];
 
-    surahsJson.forEach((element) {
+    for (var element in surahsJson) {
       surahs.add(fromJson(element));
-    });
+    }
 
     return surahs;
   }
